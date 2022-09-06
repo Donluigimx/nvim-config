@@ -3,7 +3,7 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
-  " VSCode like complition
+  " VSCode like completion
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " Snippets that works with coc

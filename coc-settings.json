@@ -1,6 +1,6 @@
 {
   "flutter.lsp.initialization.closingLabels": true,
-  "snippets.extends": {
-    "flutter": ["dart"]
-  }
+  "flutter.fvm.enabled": true,
+  "dart.lineLength": 120,
+  "svelte.enable-ts-plugin": true
 }

@@ -13,7 +13,7 @@ call plug#begin()
   " Plugins for JSX, javascript and svelte
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'pangloss/vim-javascript'
-  Plug 'evanleck/vim-svelte', {'branch': 'main'}
+  Plug 'leafOfTree/vim-svelte-plugin'
 
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
@@ -25,6 +25,9 @@ call plug#begin()
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+
+" set tabspace to 2
+set expandtab tabstop=2 shiftwidth=2
 
 " Loads configuration for multiple plugins
 source $HOME/.config/nvim/modules/coc.vim

@@ -24,6 +24,9 @@ call plug#begin()
   " Lua line plugins
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
+
+  " Copilot
+  Plug 'github/copilot.vim'
 call plug#end()
 
 " set tabspace to 2
@@ -37,6 +40,7 @@ source $HOME/.config/nvim/modules/devicons.vim
 let &l:include = 'from\|require'
 set number
 nnoremap <C-p> :Files<CR>
+nnoremap <Space>p :Files 
 set number relativenumber
 
 " Custom FZF command
@@ -51,3 +55,17 @@ nnoremap ffmt :silent %!gofmt %<CR>
 map <silent> <leader>y "+y
 map <silent> <leader>p "+p
 nmap <silent> <leader>Y :%w !pbcopy <CR>
+
+" Fast way to switch between tabs
+nmap <C-h> :tabprevious<CR>
+nmap <C-l> :tabnext<CR>
+
+" Fast way to switch between panels
+nmap <leader>h :wincmd h<CR>
+nmap <leader>l :wincmd l<CR>
+nmap <leader>j :wincmd j<CR>
+nmap <leader>k :wincmd k<CR>
+
+" Replace default copilot completion keybind
+imap <silent><script><expr> <C-Q> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true

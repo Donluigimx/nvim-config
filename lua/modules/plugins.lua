@@ -39,5 +39,8 @@ require('lazy').setup({
 
   -- shitty ai
   {'github/copilot.vim'},
+
+  -- formatter
+  {'stevearc/conform.nvim'},
 })
 

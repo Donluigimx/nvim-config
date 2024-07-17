@@ -4,12 +4,13 @@ require('modules.lazy')
 -- Load plugins
 require('modules.plugins')
 
--- Load other modules
+-- Load custom modules
 require('modules.lualine')
 require('modules.devicons')
 require('modules.lsp')
 require('modules.fzf')
 require('modules.flutter')
+require('modules.conform')
 
 -- set theme
 vim.opt.termguicolors = true

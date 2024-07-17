@@ -23,3 +23,4 @@ vim.api.nvim_create_user_command("Format", function(args)
 end, { range = true })
 
 vim.api.nvim_set_keymap('v', '<leader>f', ':Format<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', ':Format<CR>', { noremap = true, silent = true })

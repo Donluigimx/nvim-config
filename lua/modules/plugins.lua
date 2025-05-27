@@ -1,7 +1,6 @@
 require('lazy').setup({
   -- LSP plugins
 
-  -- {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   { 'neovim/nvim-lspconfig' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/nvim-cmp' },
@@ -15,6 +14,12 @@ require('lazy').setup({
     config = true,
   },                               -- specific for flutter
   { 'dart-lang/dart-vim-plugin' }, -- specific for dart
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = 'master',
+    lazy = false,
+    build = ":TSUpdate"
+  },
 
   -- Themes
   { 'ellisonleao/gruvbox.nvim' },
@@ -22,7 +27,6 @@ require('lazy').setup({
 
   -- File explorer
   { 'junegunn/fzf' },
-  -- { 'junegunn/fzf.vim' },
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -42,11 +46,4 @@ require('lazy').setup({
 
   -- formatter
   { 'stevearc/conform.nvim' },
-
-  -- better ui
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-  }
 })

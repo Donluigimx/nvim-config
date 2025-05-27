@@ -11,7 +11,7 @@ require('modules.lsp')
 require('modules.fzf')
 require('modules.flutter')
 require('modules.conform')
-require('modules.snacks')
+require('modules.treesitter')
 
 -- set theme
 vim.opt.termguicolors = true

@@ -11,16 +11,19 @@ require('modules.lsp')
 require('modules.fzf')
 require('modules.flutter')
 require('modules.conform')
+require('modules.snacks')
 
 -- set theme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('flexoki-dark')
+vim.cmd.colorscheme('gruvbox')
 
 -- Set tabspace to 2
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.mouse = ""
+-- Disable higlight search
+vim.opt.hlsearch = false
 
 -- Define include patterns
 vim.g.include = 'from\\|require'
@@ -39,9 +42,9 @@ vim.keymap.set('n', 'gofmt', ':silent %!gofmt %<CR>')
 vim.keymap.set('n', 'ffmt', ':silent %!gofmt %<CR>')
 
 -- Copy/paste from local clipboard
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('n', '<leader>Y', ':w !pbcopy<CR>')
+vim.keymap.set('v', '<leader>y', '"+y') -- Copies to clipboard selected text in visual mode
+vim.keymap.set('n', '<leader>Y', ':w !pbcopy<CR>') -- Copies whole file to clipboard
+vim.keymap.set('n', '<leader>p', '"+p') -- Paste
 
 -- Fast way to switch between tabs
 vim.keymap.set('n', '<C-h>', ':tabprevious<CR>')
@@ -53,3 +56,17 @@ vim.keymap.set('i', '<C-q>', 'copilot#Accept("\\<CR>")', {
   replace_keycodes = false
 })
 vim.g.copilot_no_tab_map = true
+
+vim.filetype.add({
+  extension = {
+    arb = "json",
+  },
+})
+
+-- Function to toggle search highlighting
+function ToggleHighlightSearch()
+    vim.o.hlsearch = not vim.o.hlsearch
+end
+
+-- Toggle higlight search
+vim.keymap.set('n', '<leader>hl', ToggleHighlightSearch, { noremap = true, silent = true })

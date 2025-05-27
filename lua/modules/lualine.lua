@@ -21,7 +21,7 @@ require('lualine').setup {
     lualine_a = {'coc#status', 'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'encoding', 'filetype', 'g:flutter_tools_decorations.app_version', 'g:flutter_tools_decorations.device.name'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },

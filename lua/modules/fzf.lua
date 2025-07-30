@@ -15,7 +15,7 @@ require('fzf-lua').setup({
   'ivy',
   files = {
     previewer = "bat",
-    formatter = "path.filename_first",
+    -- formatter = "path.filename_first",
     fd_opts = fd_opts,
   },
 })
